@@ -4,31 +4,32 @@ Sample input : 32 56 43 45 98
 
 Sample Output :
 2nd Minimum : 43
-2nd Maximum :
+2nd Maximum : 56
 
 */
-
-// int arr[n]
 
 #include <stdio.h>
 int main()
 {
     int n;
     printf("Please enter the number of elements : ");
-    scanf("%d", &n);
+    scanf("%d", &n); // specifying the size of array by user
     int arr[n];
-    // n=4 arr[0] arr[1] arr[2] arr[3] arr[4]
+    // n=4 arr[0] arr[1] arr[2] arr[3]
+
+    // taking array inputs
     for (int i = 0; i < n; i++)
     {
         printf("Enter the element no %d : ", i + 1);
         scanf("%d", &arr[i]);
     }
-
+    // setting initial max and min values for assumption
     int max1 = arr[0];
     int max2 = -1000000;
     int min1 = arr[0];
     int min2 = 1000000;
 
+    // looping through all the elements
     for (int i = 0; i < n; i++)
     {
         int curr = arr[i];
@@ -53,7 +54,7 @@ int main()
             min2 = curr;
         }
     }
-
+    // showing results
     printf("The 2nd Maximum value is : %d \n", max2);
     printf("The 2nd Minimum value is : %d \n", min2);
 
